@@ -34,7 +34,7 @@ const Total = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
-    margin-bottom: 45px;
+    margin: 33px 0px 45px 0px;
     @media (max-width: 480px) {
         font-size: 18px;
     }

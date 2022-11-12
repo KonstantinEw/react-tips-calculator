@@ -1,12 +1,15 @@
-import React from 'react'
+import { isDisabled } from '@testing-library/user-event/dist/utils'
 import { StyledButton } from './buttonStyle'
 
 interface IProps {
-    isDisablet: boolean
+    isDisabled: boolean
 }
 
-export const Button = ({ isDisablet }: IProps) => {
+export const Button = ({ isDisabled }: IProps) => {
+    const handleIsDisablet = () => {
+
+    }
     return (
-        <StyledButton disabled={isDisablet} type='submit'>Ohhhoooo 🍻 </StyledButton>
+        <StyledButton disabled={isDisabled} type='submit'>Ohhhoooo 🍻 </StyledButton>
     )
 }

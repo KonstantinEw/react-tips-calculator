@@ -10,6 +10,9 @@ export const StyledButton = styled.button`
     font-weight: 400;
     font-size: 24px;
     color: #FFFFFF;
+    &:disabled {
+        opacity: 0.3;
+    }
     @media (max-width: 768px) {
         width: 321px;
     }

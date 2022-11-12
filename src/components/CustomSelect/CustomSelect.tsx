@@ -1,12 +1,36 @@
-import { StyledCustomSelect } from "./customSelector"
+import { StyledCustomSelect } from './styledSelect'
 
-export const CustomSelect = () => {
-    return (
-        <StyledCustomSelect>
-            <option value={'10%'}>10%</option>
-            <option value={'15%'}>15%</option>
-            <option value={'20%'}>20%</option>
-        </StyledCustomSelect>
-    )
+interface IOptions {
+    value: string,
+    label: string,
 }
 
+interface IProps {
+    value: string,
+    onChange: any
+}
+
+const options: IOptions[] = [
+    { value: '10%', label: '10%' },
+    { value: '15%', label: '15%' },
+    { value: '20%', label: '20%' }
+]
+
+export const CustomSelect = ({ value, onChange }: IProps) => {
+
+    const getPercent = () => {
+        return value ? options.find(percent => percent.value === value) : ''
+    }
+    const getOnChange = (newValue: any) => {
+        onChange(newValue.value)
+    }
+
+    return (
+        <StyledCustomSelect options={options}
+            isSearchable={false}
+            classNamePrefix={'Select'}
+            placeholder={value}
+            onChange={getOnChange}
+            value={getPercent} />
+    )
+}

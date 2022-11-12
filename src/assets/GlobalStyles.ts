@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 export const Global = createGlobalStyle`
 *{
@@ -15,4 +15,25 @@ body{
     align-items: center;
 }
 `
+const AppWrapper = styled.div`
+    position:relative;
+    display: flex;
+    justify-content:center;
+    width: 1512px;
+    background: #EAF2F2;
+    padding: 203px 0px 138px 0px;
 
+    @media (max-width: 768px) {
+        width: 744px;
+        }
+
+        @media (max-width: 480px) {
+        width: 414px;
+        }
+    `
+const BgImageWrapper = styled.div`
+    position:absolute;
+    top:0;
+    left:0;
+`
+export { BgImageWrapper, AppWrapper }
