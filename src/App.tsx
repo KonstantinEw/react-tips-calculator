@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import { ReactComponent as BgImage } from './assets/icon/shape.svg'
+import { Form } from './components/Form/Form'
 
-function App() {
+const AppWrapper = styled.div`
+  position:relative;
+  display: flex;
+  justify-content:center;
+  width: 1512px;
+  background: #EAF2F2;
+  padding: 203px 0px 138px 0px;
+
+  @media (max-width: 768px) {
+      width: 744px;
+    }
+
+    @media (max-width: 480px) {
+      width: 414px;
+    }
+`
+const BgImageWrapper = styled.div`
+  position:absolute;
+  top:0;
+  left:0;
+`
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <BgImageWrapper>
+        <BgImage />
+      </BgImageWrapper>
+      <Form />
+    </AppWrapper>
   );
 }
-
-export default App;
