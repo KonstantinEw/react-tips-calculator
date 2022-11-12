@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { Button } from '../Button/Button'
 import { CustomSelect } from '../CustomSelect/CustomSelect'
 import { Input } from '../Input/Input'
@@ -11,11 +11,17 @@ export const Form = () => {
     const [isDisabled, setDisabled] = useState(true)
     const [percentTips, setPercentTips] = useState('10%')
 
+
+
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const total = (+bill * +persons / 100) * parseInt(percentTips);
         setTotal(total)
     }
+
+    useEffect(() => {
+        setDisabled(bill && persons ? false : true)
+    })
 
     return (
         <FormWrapper onSubmit={handleSubmit}>
@@ -25,7 +31,7 @@ export const Form = () => {
             <Input name='persons' onChange={setPersons} value={persons} placeholder='Enter  persons' />
             <CustomSelect value={percentTips} onChange={setPercentTips} />
             <Total>Total: {total.toFixed(2)}</Total>
-            <Button isDisabled={!bill || !persons} />
+            <Button isDisabled={isDisabled} />
         </FormWrapper>
     )
 }

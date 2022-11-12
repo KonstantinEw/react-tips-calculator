@@ -7,7 +7,7 @@ interface IOptions {
 
 interface IProps {
     value: string,
-    onChange: any
+    onChange: (newValue: any) => void
 }
 
 const options: IOptions[] = [

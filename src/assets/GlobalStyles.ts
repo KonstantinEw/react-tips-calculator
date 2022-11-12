@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { ReactComponent as BgImage } from './icon/shape.svg'
 
 export const Global = createGlobalStyle`
 *{
@@ -31,9 +32,9 @@ const AppWrapper = styled.div`
         width: 414px;
         }
     `
-const BgImageWrapper = styled.div`
+const BgSvg = styled(BgImage)`
     position:absolute;
     top:0;
     left:0;
 `
-export { BgImageWrapper, AppWrapper }
+export { BgSvg, AppWrapper }

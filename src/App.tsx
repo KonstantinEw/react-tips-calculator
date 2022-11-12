@@ -1,13 +1,10 @@
-import { AppWrapper, BgImageWrapper } from './assets/GlobalStyles';
-import { ReactComponent as BgImage } from './assets/icon/shape.svg'
+import { AppWrapper, BgSvg } from './assets/GlobalStyles';
 import { Form } from './components/Form/Form'
 
 export const App = () => {
   return (
     <AppWrapper>
-      <BgImageWrapper>
-        <BgImage />
-      </BgImageWrapper>
+      <BgSvg />
       <Form />
     </AppWrapper>
   );
