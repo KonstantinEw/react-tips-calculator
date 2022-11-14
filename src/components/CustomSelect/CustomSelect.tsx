@@ -29,7 +29,7 @@ export const CustomSelect = ({ value, onChange }: IProps) => {
             isSearchable={false}
             classNamePrefix={'Select'}
             placeholder={value}
-            onChange={handleOnChange}     //Я не победил эту типизацию
+            onChange={handleOnChange}     //Я не победил эту типизацию, поэтому пока не деплоил
             value={getPercent} />
     )
 }
