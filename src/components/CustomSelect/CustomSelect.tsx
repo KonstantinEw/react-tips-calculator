@@ -1,36 +1,35 @@
-import { StyledCustomSelect } from './styledSelect'
+import { StyledCustomSelect } from './styledSelect';
+import { OnChangeValue } from 'react-select';
 
-interface IOptions {
+interface IOption {
     value: string,
     label: string,
 }
 
 interface IProps {
     value: string,
-    onChange: (newValue: any) => void
+    onChange: (newValue: string) => void
 }
 
-const options: IOptions[] = [
+const options: IOption[] = [
     { value: '10%', label: '10%' },
     { value: '15%', label: '15%' },
     { value: '20%', label: '20%' }
 ]
 
 export const CustomSelect = ({ value, onChange }: IProps) => {
-
-    const getPercent = () => {
-        return value ? options.find(percent => percent.value === value) : ''
+    const getPercent = (value: string): IOption | undefined => {
+        return value ? options.find(percent => percent.value === value) : undefined;
     }
-    const getOnChange = (newValue: any) => {
-        onChange(newValue.value)
+    const handleOnChange = (newValue: OnChangeValue<IOption, boolean>) => {
+        onChange((newValue as IOption).value)
     }
-
     return (
         <StyledCustomSelect options={options}
             isSearchable={false}
             classNamePrefix={'Select'}
             placeholder={value}
-            onChange={getOnChange}
+            onChange={handleOnChange}     //Я не победил эту типизацию
             value={getPercent} />
     )
 }

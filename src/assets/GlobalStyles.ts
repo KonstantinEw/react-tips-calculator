@@ -24,12 +24,14 @@ const AppWrapper = styled.div`
     background: #EAF2F2;
     padding: 203px 0px 138px 0px;
 
-    @media (max-width: 768px) {
-        width: 744px;
+    @media (max-width: 768px){
+        width: 500px;
+        padding: 100px 0px 50px 0px;
         }
 
         @media (max-width: 480px) {
-        width: 414px;
+        width: 350px;
+        padding: 50px 0px 50px 0px;
         }
     `
 const BgSvg = styled(BgImage)`

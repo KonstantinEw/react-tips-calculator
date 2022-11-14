@@ -11,8 +11,6 @@ export const Form = () => {
     const [isDisabled, setDisabled] = useState(true)
     const [percentTips, setPercentTips] = useState('10%')
 
-
-
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const total = (+bill * +persons / 100) * parseInt(percentTips);
@@ -30,7 +28,7 @@ export const Form = () => {
             <Input name='bill' onChange={setBill} value={bill} placeholder='Enter bill' />
             <Input name='persons' onChange={setPersons} value={persons} placeholder='Enter  persons' />
             <CustomSelect value={percentTips} onChange={setPercentTips} />
-            <Total>Total: {total.toFixed(2)}</Total>
+            <Total>Total: {total.toFixed(2)} $</Total>
             <Button isDisabled={isDisabled} />
         </FormWrapper>
     )
