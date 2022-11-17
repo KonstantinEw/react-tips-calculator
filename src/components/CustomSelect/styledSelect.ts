@@ -8,7 +8,7 @@ export const StyledCustomSelect = styled(Select)`
     font-size: 18px;
     text-align:center;
     &:focus {
-                outline: none;
+            outline: none;
     }
     .Select__control {
         height: 68px;
